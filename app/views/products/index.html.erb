@@ -1,0 +1,16 @@
+<% if !cart.empty? %>
+  <p>Cart:</p>  
+<ul>
+    
+    <% cart.each do |p| %>
+    <li><%= p %></li>
+    <% end%>
+</ul>
+<% end %>
+<%= form_tag('/add') do  %>
+
+    <%= label_tag 'product', 'Product'  %>
+    <%= text_field_tag :product %><br>
+    <%= button_tag 'add to cart' %>
+
+<% end%>
